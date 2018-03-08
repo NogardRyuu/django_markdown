@@ -3,7 +3,7 @@
 import os
 
 from django.core.management import call_command
-from django.conf.urls import patterns, include
+from django.urls import include
 from django.conf import settings
 from django.http import HttpResponse
 
@@ -54,12 +54,12 @@ def home(request):
 # Urls
 # ----
 from django.contrib import admin
+from django.urls import re_path
 admin.autodiscover()
-urlpatterns = patterns(
-    '',
-    ('^$', home),
-    ('^admin/', include(admin.site.urls)),
-)
+urlpatterns = [
+    re_path('^$', home),
+    re_path('^admin/', include(admin.site.urls)),
+]
 
 
 if __name__ == '__main__':

@@ -66,7 +66,7 @@ Setup
 
 - Add django_markdown urls to base urls ::
 
-    url('^markdown/', include( 'django_markdown.urls')),
+    re_path('^markdown/', include( 'django_markdown.urls')),
 
 
 Use django_markdown
@@ -106,7 +106,7 @@ Use django_markdown
     # Django admin
     admin.autodiscover()
     flatpages.register()
-    urlpatterns += [ url(r'^admin/', include(admin.site.urls)), ]
+    urlpatterns += [ re_path(r'^admin/', include(admin.site.urls)), ]
 
 #) Template tags: ::
 
